@@ -79,7 +79,7 @@ app.MapDelete("/todos/{id}", async (int id, ToDoDbContext db) =>
 });
 
 
-app.MapGet("/",()=>"Auth service API is running");
-app.MapGet("/", () => "Hello World!");
+// app.MapGet("/",()=>"Auth service API is running");
+// app.MapGet("/", () => "Hello World!");
 
 app.Run();
