@@ -37,7 +37,6 @@ app.UseSwaggerUI(c =>
     c.RoutePrefix = string.Empty; // זה יספק את Swagger UI בכתובת הבית
 });
 
-app.MapGet("/", () => "Hello World!");
 
 app.MapGet("/", async (ToDoDbContext db) =>
 {
@@ -81,5 +80,6 @@ app.MapDelete("/todos/{id}", async (int id, ToDoDbContext db) =>
 
 
 app.MapGet("/",()=>"Auth service API is running");
+app.MapGet("/", () => "Hello World!");
 
 app.Run();
