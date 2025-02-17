@@ -39,6 +39,11 @@ app.UseSwaggerUI(c =>
 
 app.MapGet("/", () => "Hello World!");
 
+app.MapGet("/", async (ToDoDbContext db) =>
+{
+    return await db.Items.ToListAsync();
+});  
+
 app.MapGet("/todos", async (ToDoDbContext db) =>
 {
     return await db.Items.ToListAsync();
@@ -73,5 +78,8 @@ app.MapDelete("/todos/{id}", async (int id, ToDoDbContext db) =>
 
     return Results.NoContent();
 });
+
+
+app.MapGet("/",()=>"Auth service API is running");
 
 app.Run();
